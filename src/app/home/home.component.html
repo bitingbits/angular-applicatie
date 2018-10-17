@@ -1,0 +1,59 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl">
+      <h1 style="text-align: center;">
+        You're on the home page!
+      </h1>
+      <br>
+    </div>
+    <div class="col-sm">
+      <!-- CARD -->
+      <div class="card" style="width: 18rem; height: 19rem;">
+        <div class="card-body">
+          <h5 class="card-title">NgIf Example</h5>
+          <p class="card-text">Click the button to toggle the text color below!</p>
+
+          <button class="btn btn-dark colorToggle" (click)="colorToggle = !colorToggle">{{colorToggle ? 'red' : 'blue'}}</button>
+          <p *ngIf="colorToggle; else elseBlock" id="blue">Blue!</p>
+          <ng-template #elseBlock><p id="red">Red!</p></ng-template>
+        </div>
+      </div>
+      <!-- CARD END -->
+    </div>
+
+    <div class="col-sm">
+      <!-- CARD -->
+      <div class="card" style="width: 18rem; height: 19rem; overflow: scroll;">
+        <div class="card-body">
+          <h5 class="card-title">NgFor Example</h5>
+          <p class="card-text">Here we go through a list of other colors that's defined in the home.component.ts!</p>
+          <ul>
+            <li *ngFor="let color of otherColors; let i = index" id="color{{i}}">
+              {{ color }}
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <!-- CARD END -->
+    </div>
+    <div class="col-sm">
+      <!-- CARD -->
+      <div class="card" style="width: 18rem; height: 19rem;">
+        <div class="card-body">
+          <h5 class="card-title">Interpolation and method call Example</h5>
+          <p class="card-text interpolationText">There are currently <b>{{otherColors.length}}</b> colors. Enter another and click the button to add it!</p>
+
+          <input class="form-control" #newColor>
+          <button class="form-control btn btn-dark addColor"  (click)="addColor(newColor.value)">Add</button>
+        </div>
+      </div>
+      <!-- CARD END -->
+    </div>
+  </div>
+</div>
+
+
+

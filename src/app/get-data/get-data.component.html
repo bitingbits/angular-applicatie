@@ -1,0 +1,10 @@
+<h3>Get Data calls upon HttpClient to do a request</h3>
+<p>For this call the url {{url}} is used.
+  <br>
+  The searchterm used for this result is '{{searchTerm}}', and the results are limited to {{resultLimit}}.
+</p>
+<ul>
+  <li *ngFor="let result of resultArray">
+    {{ result }}
+  </li>
+</ul>
